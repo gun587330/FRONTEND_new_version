@@ -4,7 +4,6 @@ import '../../styles/BoardsNew.css';
 import React, { useState } from 'react';
 // For TSError in 129line 
 import process from '@babel/core/package.json';
-import.meta.env.PUBLIC_URL;
 
 
 const BoardsNew = () => {
@@ -128,17 +127,17 @@ const BoardsNew = () => {
                     <div className="Upload">
                             {/* 1. import // 2. public 폴더 내 이미지로 사용 3. 상대경로 사용 */}
                             {/* 2. public 방법 사용함! */}
-                            <img src={`${process.env.PUBLIC_URL}/Plus.png`} />
+                            {/* <img src={`${process.env.PUBLIC_URL}/Plus.png`} /> */}
                             <div className="UploadLabel">클릭해서 사진 업로드</div>
                     </div>
 
                     <div className="Upload">
-                            <img src={`${process.env.PUBLIC_URL}/Plus.png`} />
+                            {/* <img src={`${process.env.PUBLIC_URL}/Plus.png`} /> */}
                             <div className="UploadLabel">클릭해서 사진 업로드</div>
                     </div>
 
                     <div className="Upload">
-                            <img src={`${process.env.PUBLIC_URL}/Plus.png`} />
+                            {/* <img src={`${process.env.REACT_APP_PUBLIC_URL}/Plus.png`} alt="Plus" /> */}
                             <div className="UploadLabel">클릭해서 사진 업로드</div>
                     </div>
                 </div>
