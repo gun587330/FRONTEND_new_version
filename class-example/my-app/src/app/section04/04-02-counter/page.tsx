@@ -1,4 +1,5 @@
-"use client"; // React 18 버전 이후로는 이 녀석을 써줘야 useState 쓸 때 에러가 없음!
+// React 18 버전 이후로는 이 녀석을 써줘야 useState 쓸 때 에러가 없음!
+"use client"; // React 구 버전 방식으로 실행해줘!
 import { useState } from "react";
 
 const 카운터 = () => {
