@@ -26,6 +26,19 @@
     /*--foreground: #ededed;*/
   }
 }
+/* 내가 만드는 부트스트랩 CSS */
+/********* tailwind V3버전 *********/
+/*@layer utilities{
+    .철수의상자{
+        color: green;
+        font-size: 30px;
+    }
+}*/
+/********* tailwind V4버전(class 이름 한글명 적용 안되는듯..) *********/
+@utility chulsuBox{
+    color: green;
+    font-size: 30px;
+}
 
 body {
   background: var(--background);
