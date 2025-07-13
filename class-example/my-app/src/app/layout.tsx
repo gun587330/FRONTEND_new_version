@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-//import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google"; // google font라는 녀석이 next에서 제공되고 있음
 import "./globals.css";
 
-/* 폰트는 나중에 보자! */
-//const geistSans = Geist({
-//  variable: "--font-geist-sans",
-//  subsets: ["latin"],
-//});
+/* 
+[04-04-fonts 내용]
+기존에 CSS-module의 방식처럼 '사용자지정이름.variable' 형식으로 className에 넣는다!
+*/
+const 철수의폰트 = Geist({
+  variable: "--철수의폰트변수",
+  subsets: ["latin"],
+});
 
-//const geistMono = Geist_Mono({
-//  variable: "--font-geist-mono",
-//  subsets: ["latin"],
-//});
+const 글로벌폰트 = Geist_Mono({
+  variable: "--글로벌폰트변수",
+  subsets: ["latin"],
+});
 
 //export const metadata: Metadata = {
 //  title: "Create Next App",
@@ -22,7 +25,8 @@ import "./globals.css";
 export default function RootLayout(props) {
   return (
     <html lang="en">
-      <body>
+      {/*문자열과 변수를 함께 쓰고 싶을 떄, 빽틱(₩)으로 감싼 후, 변수는 $로! 이 경우 두 개 폰트를 함꼐 넣기 위해 빽틱 사용!*/}
+      <body className={`${철수의폰트.variable} ${글로벌폰트.variable}`}> 
         <div>======여기는 레이아웃 입니다=====</div>
         {props.children}
         <div>======여기는 레이아웃 입니다=====</div>
