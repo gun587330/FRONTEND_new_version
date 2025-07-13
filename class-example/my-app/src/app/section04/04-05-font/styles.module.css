@@ -1,0 +1,6 @@
+/* CSS-module */
+
+.폰트를보여주자 {
+    /* 기존 layout.tsx에 정의 해놨던 variable */
+    font-family: var(--철수의폰트변수);
+}
