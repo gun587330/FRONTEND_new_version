@@ -1,0 +1,4 @@
+.이미지를보여주자{
+    width: 200px;
+    height: auto; /* height 속성을 따로 주지 않으면 width에 맞게 비율 자동 */
+}
