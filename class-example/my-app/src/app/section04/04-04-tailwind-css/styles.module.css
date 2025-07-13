@@ -1,0 +1,19 @@
+@reference "../../globals.css"; /* @reference 해줘야 함 */
+/* 
+tailwind-css 변수 만들고 싶으면 
+1. tailwind.config.css 파일에서 수정(V3버전)
+2. globals.css 내부 자동 형성되어 있는 @theme 내부에서 수정(V4버전) 
+*/
+
+.버튼스타일 {
+    background-color: yellow;
+    @apply text-철수가좋아하는색깔; /* tailwind 적용 */
+}
+
+.네모상자스타일{
+    width: 200px;
+    height: 200px;
+
+    /*background-color: red;*/
+    @apply bg-영희가좋아하는색깔;
+}

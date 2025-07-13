@@ -1,3 +1,4 @@
+/* next에 자동으로 tailwind 자동 적용이 되어 있음 */
 @import "tailwindcss";
 
 :root {
@@ -10,12 +11,19 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* 강의에서는 tailwind.config.css 파일에서 수정하지만,
+  next 15 & tailwind V4 버전 이후에는 그냥 global.css에 통합되어 여기다가 수정해야 함 */
+  
+  /* 나만의 부트스트랩 만들기 */
+  --color-철수가좋아하는색깔: blue;
+  /* --color-철수: var(--color-red-300); -> 요 문법도 가능! */
+  --color-영희가좋아하는색깔: green;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /*--background: #0a0a0a;
-    --foreground: #ededed;*/
+    /*--background: #0a0a0a;*/
+    /*--foreground: #ededed;*/
   }
 }
 
