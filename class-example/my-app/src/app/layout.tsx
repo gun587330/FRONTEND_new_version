@@ -30,7 +30,7 @@ export default function RootLayout(props) {
       {/*문자열과 변수를 함께 쓰고 싶을 떄, 빽틱(₩)으로 감싼 후, 변수는 $로! 이 경우 두 개 폰트를 함꼐 넣기 위해 빽틱 사용!*/}
       <body className={`${철수의폰트.variable} ${글로벌폰트.variable}`}> 
         <div>======여기는 레이아웃 입니다=====</div>
-        ApolloSettings의 역할 : props.children을 통해 접속하는 모든 페이지에서 graphql 기능이 작동하게 해줘!!
+        {/*ApolloSettings의 역할 : props.children을 통해 접속하는 모든 페이지에서 graphql 기능이 작동하게 해줘!!*/}
         <ApolloSetting>
             {props.children}
         </ApolloSetting>
