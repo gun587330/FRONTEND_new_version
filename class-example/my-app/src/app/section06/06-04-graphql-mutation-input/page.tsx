@@ -1,7 +1,9 @@
 "use client"
 import { useMutation, gql } from "@apollo/client"
+import { useState } from "react";
 /* [게시글 등록] input 타입에 직접 입력한 값을 state를 통해 graphQL 통신 연습 */
 
+/*************** [GraphQL Setting]-한 번 세팅 후 신경 ㄴㄴ ***************/
 // gql : graphQL 포장해주는 녀석
 const 나의그래프큐엘셋팅 = gql`
     #### 지정된 문법이라 그냥 암기해야 함 ####
@@ -19,23 +21,49 @@ const 나의그래프큐엘셋팅 = gql`
         }
     }
 `;
+/********************************************************************/
 
 export default function GraphqlMutationPage(){
-    const [나의함수] = useMutation(나의그래프큐엘셋팅);
+    const [writer, setWriter] = useState("");
+    const [title, setTitle] = useState("");
+    const [contents, setContents] = useState("");
 
+    // event handler function
+    const onChangeWriter = (e) => { // typescript 때문에 발생하는 Error(일단 무시)
+        setWriter(e.target.value);
+    };
+    const onChangeTitle = (e) => { // typescript 때문에 발생하는 Error(일단 무시)
+        setTitle(e.target.value);
+    };
+    const onChangeContents = (e) => { // typescript 때문에 발생하는 Error(일단 무시)
+        setContents(e.target.value);
+    };
+
+
+
+
+    const [나의함수] = useMutation(나의그래프큐엘셋팅);
     const onClickSubmit = async () => {
         // 여기서 graphql 요청하기
         const result = await 나의함수({
             //variables가 $의 역할을 함
             variables: {
-                mywriter: "혼발놈",
-                mytitle: "안녕하세요",
-                mycontents: "하아히아",
+                mywriter: writer,
+                mytitle: title,
+                mycontents: contents,
             },
         });
         console.log(result);
     }
 
     //한 줄 작성할 때는 return에 소괄호로 감싸주지 않아도 됨
-    return <button onClick={onClickSubmit}>GRAPHQL-API 요청하기</button>
+    return (
+        <>
+            <input type="text" placeholder="작성자 입력" onChange={onChangeWriter} style={{border: "1px solid red"}}></input><br /><br />
+            <input type="text" placeholder="제목 입력" onChange={onChangeTitle} style={{border: "1px solid red"}}></input><br /><br />
+            <input type="text" placeholder="내용 입력" onChange={onChangeContents} style={{border: "1px solid red"}}></input><br /><br />
+
+            <button onClick={onClickSubmit} style={{color: 'red'}}>GRAPHQL-API 요청하기</button>
+        </>
+    )
 }

@@ -36,6 +36,5 @@ export default function GraphqlMutationPage(){
         console.log(result);
     }
 
-    //한 줄 작성할 때는 return에 소괄호로 감싸주지 않아도 됨
     return <button onClick={onClickSubmit}>GRAPHQL-API 요청하기</button>
 }
